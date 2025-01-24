@@ -1,5 +1,4 @@
 import React from "react";
-// import App from "./Router";
 import { App } from "piller9_npm_user";
 
 const token =
