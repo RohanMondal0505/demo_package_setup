@@ -20,13 +20,23 @@ const user = {
 
 const X_API_KEY = "tOKMV0hOEK3B8vrsjVk9B2TWpRgOKTyT2f7C6qT0";
 const API_BASE_URL = "https://pilar9-backend.vercel.app";
-
+const logoutUrl = "/demo";
+const logoutFunction = () => {
+	toast.warn("Logout");
+};
 
 const index = () => {
 
 	return (
 		<>
-			<App token={token} user={user} X_API_KEY={X_API_KEY} API_BASE_URL={API_BASE_URL} />
+			<App
+				token={token}
+				user={user}
+				X_API_KEY={X_API_KEY}
+				API_BASE_URL={API_BASE_URL}
+				logoutUrl={logoutUrl}
+				logoutFunction={logoutFunction}
+			/>
 		</>
 	);
 };
