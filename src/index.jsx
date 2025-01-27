@@ -1,5 +1,5 @@
-import Admin from "piller9_npm_admin";
-import { App } from "piller9_npm_user";
+import Admin from "pillar9_npm_admin";
+import { App } from "pillar9_npm_user";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Test from "./pages/Test/Test";
