@@ -1,0 +1,25 @@
+.title {
+	font-size: 2.3rem !important;
+}
+
+.CancelButton {
+	background-color: rgb(209, 39, 61) !important;
+}
+
+.SaveButton {
+	background-color: rgb(29, 218, 70) !important;
+}
+
+.Widget1Style {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 3rem;
+
+	button {
+		padding: 0.2rem 1rem;
+		cursor: pointer;
+	}
+}

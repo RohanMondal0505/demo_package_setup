@@ -1,6 +1,7 @@
 // import Admin from "pillar9_npm_admin";
 import { App } from "pillar9_user_package";
 import React from "react";
+import "./Style.scss";
 
 const index = () => {
 	return (
@@ -51,8 +52,183 @@ const UserWrapper = () => {
 	const agentIdType = "RMAWANIR";
 	const defaultFields = ["UniqueID", "StandardStatus", "PropertyType", "UnparsedAddress", "City", "ListAgentMlsId"];
 
+	//custom widget
+	const CustomWidget1 = () => {
+		return (
+			<div className="Widget1Style">
+				<h1>Your Custom Widget Component Here</h1>
+				<h2>You can Apply Style Here By directly applying styls by className in your custom widget component</h2>
+				<button>Dummy Button</button>
+			</div>
+		);
+	};
+	const CustomWidget2 = () => {
+		return (
+			<div>
+				<button>Press Me</button>
+				<button>Click Me</button>
+				<button>Test</button>
+			</div>
+		);
+	};
+	const CustomWidget3 = () => {
+		return (
+			<div>
+				<h1>Lorem ipsum dolor sit amet.</h1>
+				<h2>widget 3</h2>
+				<button>Press Me</button>
+			</div>
+		);
+	};
+	const CustomWidget4 = () => {
+		return (
+			<div>
+				<button>Widget 4</button>
+				<button>Enter</button>
+			</div>
+		);
+	};
+	const CustomWidget5 = () => {
+		return (
+			<div>
+				<h2>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem neque vel voluptatibus cum accusamus? Nulla ullam rem ipsa
+					nihil labore.
+				</h2>
+			</div>
+		);
+	};
+
+	const customWidget = {
+		widgets: [
+			{
+				name: "ListAgent",
+				isLocked: false,
+				isCollapsed: false,
+				show: true,
+				component: CustomWidget1,
+			},
+			{
+				name: "Dimensions",
+				isLocked: false,
+				isCollapsed: false,
+				show: true,
+				component: CustomWidget2,
+			},
+			{
+				name: "Segments",
+				isLocked: false,
+				isCollapsed: false,
+				show: true,
+				component: CustomWidget3,
+			},
+			{
+				name: "Time",
+				isLocked: false,
+				isCollapsed: false,
+				show: true,
+				component: CustomWidget4,
+			},
+			{
+				name: "Filter",
+				isLocked: false,
+				isCollapsed: false,
+				show: true,
+				component: CustomWidget5,
+			},
+		],
+		layout: [
+			{
+				i: "box1",
+				x: 0,
+				y: 0,
+				w: 12,
+				h: 13,
+				isDraggable: true,
+				isResizable: true,
+			},
+			{
+				i: "box2",
+				x: 0,
+				y: 13,
+				w: 6,
+				h: 8,
+				isDraggable: true,
+				isResizable: true,
+			},
+			{
+				i: "box3",
+				x: 6,
+				y: 13,
+				w: 6,
+				h: 8,
+				isDraggable: true,
+				isResizable: true,
+			},
+			{
+				i: "box4",
+				x: 0,
+				y: 21,
+				w: 6,
+				h: 8,
+				isDraggable: true,
+				isResizable: true,
+			},
+			{
+				i: "box5",
+				x: 6,
+				y: 21,
+				w: 6,
+				h: 8,
+				isDraggable: true,
+				isResizable: true,
+			},
+		],
+	};
+
+	const customStyle = {
+		title: {
+			color: "blue",
+		},
+		titleClass: "title",
+		cancelButton: {},
+		cancelButtonClass: "CancelButton",
+		saveButton: {},
+		saveButtonClass: "SaveButton",
+		manageButton: {},
+		manageButtonClass: "YourClassName",
+		dashboard: {
+			backgroundColor: "#fff",
+			padding: "2rem",
+		},
+		dashboardClass: "dashboardClass",
+		widgetTitle: {
+			fontSize: "1.2rem",
+			color: "#444",
+		},
+		widgetTitleClass: "WidgetClassName",
+		fullScreenStyle: {
+			backgroundColor: "#fff",
+		},
+		fullScreenClassName: "fullScreenClassName",
+	};
+	const title = "Your Custom Title";
+	const handleSaveLayout = (data) => {
+		console.log(data);
+	};
+
 	return (
 		<>
+			{/* custom-dashboard */}
+			<App
+				type={"CustomDashboard"}
+				padding={padding}
+				customWidget={customWidget}
+				handleSaveLayout={handleSaveLayout}
+				title={title}
+				customStyle={customStyle}
+			/>
+
 			{/* dashboard */}
 			{/* <App
 				token={token}
@@ -79,7 +255,7 @@ const UserWrapper = () => {
 			/> */}
 
 			{/*Multi dashboard */}
-			<App
+			{/* <App
 				token={token}
 				user={user}
 				X_API_KEY={X_API_KEY}
@@ -91,7 +267,7 @@ const UserWrapper = () => {
 				padding={padding}
 				agentIdType={agentIdType}
 				defaultFields={defaultFields}
-			/>
+			/> */}
 		</>
 	);
 };
