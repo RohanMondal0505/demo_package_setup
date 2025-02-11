@@ -64,7 +64,7 @@ const UserWrapper = () => {
 	};
 	const CustomWidget2 = () => {
 		return (
-			<div>
+			<div className="Widget2Style">
 				<button>Press Me</button>
 				<button>Click Me</button>
 				<button>Test</button>
