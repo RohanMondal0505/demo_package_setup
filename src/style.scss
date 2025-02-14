@@ -3,7 +3,8 @@
 }
 
 .CancelButton {
-	background-color: rgb(209, 39, 61) !important;
+	background-color: rgba(241, 12, 43, 0.425) !important;
+	padding: 0.6rem 1rem !important;
 }
 
 .SaveButton {
@@ -24,12 +25,11 @@
 	}
 }
 
-
-.Widget2Style{
-    width: 100%;
-    background-color: rgba(0, 255, 255, 0.514);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
+.Widget2Style {
+	width: 100%;
+	background-color: rgba(0, 255, 255, 0.514);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1rem;
 }

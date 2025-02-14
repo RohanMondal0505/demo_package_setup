@@ -1,6 +1,13 @@
 // import Admin from "pillar9_npm_admin";
 import { App } from "pillar9_user_package";
 import React from "react";
+import { AiOutlineFullscreenExit } from "react-icons/ai";
+import { BiLockAlt, BiSolidLockOpen } from "react-icons/bi";
+import { BsLockFill, BsThreeDotsVertical } from "react-icons/bs";
+import { FaCaretSquareDown, FaCaretSquareUp } from "react-icons/fa";
+import { IoSave } from "react-icons/io5";
+import { MdOutlineCancel } from "react-icons/md";
+import { SlSizeFullscreen } from "react-icons/sl";
 import "./Style.scss";
 
 const index = () => {
@@ -99,6 +106,81 @@ const UserWrapper = () => {
 		);
 	};
 
+	const existingMenu = [
+		{
+			name: "Collapse",
+			item: <FaCaretSquareUp size={"20px"} color="red" />,
+		},
+		{
+			name: "UnCollapse",
+			item: <FaCaretSquareDown size={"20px"} color="green" />,
+		},
+		{
+			name: "FullScreen",
+			item: <SlSizeFullscreen size={"17px"} color="green" />,
+		},
+		{
+			name: "CloseFullScreen",
+			item: <AiOutlineFullscreenExit size={"20px"} color="green" />,
+		},
+		{
+			name: "ThreeDot",
+			item: <BsThreeDotsVertical size={"20px"} color="green" />,
+		},
+		{
+			name: "LockMenu",
+			item: (
+				<>
+					Lock
+					<BsLockFill />
+				</>
+			),
+		},
+		{
+			name: "UnlockMenu",
+			item: (
+				<>
+					Unlock
+					<BiSolidLockOpen />
+				</>
+			),
+		},
+		{
+			name: "LockIcon",
+			item: <BiLockAlt size={"20px"} color="red" />,
+		},
+	];
+	const CustomHeader = {
+		existingMenu,
+		additionalMenu: [
+			{
+				name: "addMenu1",
+				item: "L-Menu1",
+				onClick: () => alert("C-Menu1 Clicked"),
+			},
+			{
+				name: "addMenu2",
+				item: "L-Menu2",
+				onClick: () => console.log("C-Menu2 Clicked"),
+			},
+		],
+	};
+	const CustomHeader1 = {
+		existingMenu,
+		additionalMenu: [
+			{
+				name: "addMenu1",
+				item: "S-Menu1",
+				onClick: () => alert("Segment Menu1 Clicked"),
+			},
+			{
+				name: "addMenu2",
+				item: "S-Menu2",
+				onClick: () => console.log("Segment Menu2 Clicked"),
+			},
+		],
+	};
+
 	const customWidget = {
 		widgets: [
 			{
@@ -106,35 +188,45 @@ const UserWrapper = () => {
 				isLocked: false,
 				isCollapsed: false,
 				show: true,
+				showHeader: true,
 				component: CustomWidget1,
+				headerItems: CustomHeader,
 			},
 			{
 				name: "Dimensions",
 				isLocked: false,
 				isCollapsed: false,
 				show: true,
+				showHeader: false,
 				component: CustomWidget2,
+				headerItems: CustomHeader,
 			},
 			{
 				name: "Segments",
 				isLocked: false,
 				isCollapsed: false,
 				show: true,
+				showHeader: true,
 				component: CustomWidget3,
+				headerItems: CustomHeader1,
 			},
 			{
 				name: "Time",
 				isLocked: false,
 				isCollapsed: false,
 				show: true,
+				showHeader: true,
 				component: CustomWidget4,
+				headerItems: CustomHeader,
 			},
 			{
 				name: "Filter",
 				isLocked: false,
 				isCollapsed: false,
 				show: true,
+				showHeader: true,
 				component: CustomWidget5,
+				headerItems: CustomHeader,
 			},
 		],
 		layout: [
@@ -186,6 +278,18 @@ const UserWrapper = () => {
 		],
 	};
 
+	const buttonItems = {
+		manageWidget: {
+			item: "Manage Widgets",
+		},
+		cancelButton: {
+			item: <MdOutlineCancel size={"20px"} color="red" />,
+		},
+		saveButton: {
+			item: <IoSave size={"20px"} color="green" />,
+		},
+	};
+
 	const customStyle = {
 		title: {
 			color: "blue",
@@ -222,11 +326,11 @@ const UserWrapper = () => {
 			{/* custom-dashboard */}
 			<App
 				type={"CustomDashboard"}
-				padding={padding}
 				customWidget={customWidget}
 				handleSaveLayout={handleSaveLayout}
 				title={title}
 				customStyle={customStyle}
+				buttonItems={buttonItems}
 			/>
 
 			{/* dashboard */}
