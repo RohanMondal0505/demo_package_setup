@@ -8,7 +8,11 @@
 }
 
 .SaveButton {
-	background-color: rgb(29, 218, 70) !important;
+	background-color: rgba(29, 218, 70, 0.541) !important;
+	padding: 0.6rem 1rem !important;
+}
+.ManageWidgetButton{
+	background-color: rgba(29, 196, 218, 0.541) !important;
 }
 
 .Widget1Style {

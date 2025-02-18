@@ -64,7 +64,7 @@ const UserWrapper = () => {
 		return (
 			<div className="Widget1Style">
 				<h1>Your Custom Widget Component Here</h1>
-				<h2>You can Apply Style Here By directly applying styls by className in your custom widget component</h2>
+				<h2>You can Apply Style Here By directly applying styles by className in your custom widget component</h2>
 				<button>Dummy Button</button>
 			</div>
 		);
@@ -72,6 +72,7 @@ const UserWrapper = () => {
 	const CustomWidget2 = () => {
 		return (
 			<div className="Widget2Style">
+				<p>me without header😊</p>
 				<button>Press Me</button>
 				<button>Click Me</button>
 				<button>Test</button>
@@ -187,7 +188,7 @@ const UserWrapper = () => {
 				name: "ListAgent",
 				isLocked: false,
 				isCollapsed: false,
-				show: true,
+				show: false,
 				showHeader: true,
 				component: CustomWidget1,
 				headerItems: CustomHeader,
@@ -196,7 +197,7 @@ const UserWrapper = () => {
 				name: "Dimensions",
 				isLocked: false,
 				isCollapsed: false,
-				show: true,
+				show: false,
 				showHeader: false,
 				component: CustomWidget2,
 				headerItems: CustomHeader,
@@ -294,13 +295,13 @@ const UserWrapper = () => {
 		title: {
 			color: "blue",
 		},
-		titleClass: "title",
+		titleClass: "YourClassName",
 		cancelButton: {},
 		cancelButtonClass: "CancelButton",
 		saveButton: {},
 		saveButtonClass: "SaveButton",
 		manageButton: {},
-		manageButtonClass: "YourClassName",
+		manageButtonClass: "ManageWidgetButton",
 		dashboard: {
 			backgroundColor: "#fff",
 			padding: "2rem",
@@ -310,7 +311,12 @@ const UserWrapper = () => {
 			fontSize: "1.2rem",
 			color: "#444",
 		},
-		widgetTitleClass: "WidgetClassName",
+		widgetTitleClass: "WidgetTitleClassName",
+		headerStyle: {
+			backgroundColor: "skyblue",
+			color: "#000",
+		},
+		headerClass: "headerClass",
 		fullScreenStyle: {
 			backgroundColor: "#fff",
 		},
