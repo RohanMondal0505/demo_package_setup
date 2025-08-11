@@ -79,7 +79,7 @@ To run the tests, follow these steps:
 **👤 Author**
 ================
 
-This project was created by [Your Name], a professional software developer with a passion for building high-quality applications.
+This project was created by [Rohan Mondal], a professional software developer with a passion for building high-quality applications.
 
 **📝 License**
 ================
